@@ -1,0 +1,16 @@
+{
+  "name": "mq-sass",
+  "version": "0.1.0",
+  "authors": [
+    "Jonathan Suh <hello@jonsuh.com>"
+  ],
+  "main": "stylesheets/_mq.scss",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
