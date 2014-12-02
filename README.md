@@ -1,6 +1,6 @@
 # mq-sass
 
-mq-sass is a simple, lightweight media query library for Sass.
+mq-sass is a lightweight media query library for Sass.
 
 ## Requirements
 
@@ -17,7 +17,9 @@ mq-sass is a simple, lightweight media query library for Sass.
 
 2. Import mq-sass at the top of your Sass file.
 
-  ```@import "bower_components/mq-sass/styleshets/mq-sass";```
+  ```scss
+  @import "bower_components/mq-sass/styleshets/mq-sass";
+  ```
 
   If you're using Grunt, Gulp, Compass, or alike, include/import mq-sass:
 
@@ -53,9 +55,11 @@ mq-sass is a simple, lightweight media query library for Sass.
 
 ### Mixin
 
-    @include mq($breakpoint, $minmax) {
-      // Sass goes here
-    }
+```scss
+@include mq($breakpoint, $minmax) {
+  // Sass goes here
+}
+```
 
 ### Settings
 
@@ -91,17 +95,17 @@ $mq-only: "only screen";
   ```
 
   ```css
-  // Resulting CSS
+  /* Resulting CSS */
   @media only screen and (min-width: 480px) {
     color: white;
   }
   ```
 
-  If you don't like the pre-defined breakpoints, you can customize your own breakpoints map.
+  You can also customize your own breakpoints.
 
   ```scss
   $mq-breakpoints: (
-    x : 600px,
+    s : 600px,
     m : 800px,
     l : 1000px,
     xl: 1200px,
@@ -131,7 +135,7 @@ $mq-only: "only screen";
   ```
 
   ```css
-  // Resulting CSS
+  /* Resulting CSS */
   @media only screen and (orientation: portrait) {
     color: white;
   }
@@ -152,7 +156,7 @@ $mq-only: "only screen";
   ```
 
   ```css
-  // Resulting CSS
+  /* Resulting CSS */
   @media only screen and (min-width: 700px) {
     color: white;
   }
@@ -162,9 +166,11 @@ $mq-only: "only screen";
 
 #### `$minmax`
 
-`$minmax` accepts values `min` or `max`, which determines whether your media query will be `min-width:` or max-width:` respectively. If left blank, it falls back to the default value, `min`.
+By default, media queries are mobile first (`min-width`).
 
-**Note:** If using a pre-defined breakpoint from `$mq-breakpoints()` and `$minmax` value of `max`, the `max-width` value will be 1 pixel less.
+`$minmax` accepts values `min` or `max`, which will result in `min-width:` or `max-width:` respectively. If left blank, it falls back to the default, `min`.
+
+**Note:** When using `max`, if your breakpoint is one from `$mq-breakpoints()`, the `max-width` value will be 1 pixel less.
 
 Example:
 
@@ -187,7 +193,7 @@ Example:
 ```
   
 ```css
-// Resulting CSS
+/* Resulting CSS */
 @media only screen and (min-width: 768px) {
   color: white;
 }
@@ -220,7 +226,7 @@ $mq-ems: true;
 ```
 
 ```css
-// Resulting CSS
+/* Resulting CSS */
 @media only screen and (min-width: 37.5em) {
   color: white;
 }
@@ -236,7 +242,7 @@ $mq-em-base: 20px;
 ```
   
 ```css
-// Resulting CSS
+/* Resulting CSS */
 @media only screen and (min-width: 30em) {
   color: cyan;
 }
@@ -244,14 +250,14 @@ $mq-em-base: 20px;
 
 #### only
 
-By default media queries are are specified for `only screen`. For some reason if you'd like to change it or remove it completely, you can do so by changing the setting `$mq-only`:
+By default media queries are specified for `only screen`. For some reason if you'd like to change it or remove it completely, you can do so by changing the setting `$mq-only`:
 
 ```scss
 $mq-only: "screen";
 ```
   
 ```css
-// Resulting CSS
+/* Resulting CSS */
 @media screen and (min-width...) {}
 ```
   
@@ -260,7 +266,7 @@ $mq-only: ""; // or false
 ```
   
 ```css
-// Resulting CSS
+/* Resulting CSS */
 @media (min-width...) {}
 ```
 
