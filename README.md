@@ -232,9 +232,7 @@ $mq-only: "screen";
   
 ```css
 // Resulting CSS
-@media screen and (min-width...) {
-  
-}
+@media screen and (min-width...) {}
 ```
   
 ```scss
@@ -243,9 +241,7 @@ $mq-only: ""; // or false
   
 ```css
 // Resulting CSS
-@media (min-width...) {
-  
-}
+@media (min-width...) {}
 ```
 
 ## License
