@@ -35,7 +35,9 @@ mq-sass is a simple, lightweight media query library for Sass.
 
   Then import mq-sass at the top of your Sass file.
 
-  ```@import "mq-sass";```
+  ```scss
+  @import "mq-sass";
+  ```
 
 ### Other
 
