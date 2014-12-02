@@ -250,7 +250,7 @@ $mq-em-base: 20px;
 
 #### media
 
-By default media of media queries are specified for `only screen`. For some reason if you'd like to change it or remove it completely, you can do so by changing the setting `$mq-media`:
+By default the media is specified for `only screen`. For some reason if you'd like to change it or remove it completely, you can do so by changing the setting `$mq-media`:
 
 ```scss
 $mq-media: "screen";
