@@ -8,13 +8,13 @@
 // mq Mixin
 // ==================================================
 @mixin mq($breakpoint, $minmax: min) {
-  $only: $mq-only;
+  $media: $mq-media;
 
-  @if ($only == false) {
-    $only: "";
+  @if ($media == false) {
+    $media: "";
   }
   @else {
-    $only: $only + " and ";
+    $media: $media + " and ";
   }
 
   $value: map-get($mq-breakpoints, $breakpoint);
@@ -39,7 +39,7 @@
       $value: $value + px;
     }
 
-    $media-query: "#{$only} (#{$minmax}-width: #{$value})";
+    $media-query: "#{$media} (#{$minmax}-width: #{$value})";
 
     @media #{$media-query} {
       @content;
@@ -49,15 +49,15 @@
   @else {
     @if (type-of($breakpoint) == string) {
       @if ($breakpoint == landscape or $breakpoint == portrait) {
-        $media-query: "#{$only} (orientation: #{$breakpoint})";
+        $media-query: "#{$media} (orientation: #{$breakpoint})";
 
         @media #{$media-query} {
           @content;
         }
       }
       @else if ($breakpoint == retina) {
-        $media-query: "#{$only} (-webkit-min-device-pixel-ratio: 2)," +
-                      "#{$only} (min-resolution: 2dppx)";
+        $media-query: "#{$media} (-webkit-min-device-pixel-ratio: 2)," +
+                      "#{$media} (min-resolution: 2dppx)";
 
         @media #{$media-query} {
           @content;
@@ -85,7 +85,7 @@
         $value: $value + px;
       }
 
-      $media-query: "#{$only} (#{$minmax}-width: #{$value})";
+      $media-query: "#{$media} (#{$minmax}-width: #{$value})";
 
       @media #{$media-query} {
         @content;
