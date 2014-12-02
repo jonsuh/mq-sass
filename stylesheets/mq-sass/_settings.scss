@@ -4,19 +4,19 @@
 
 // Ems
 // ==================================================
-$mq-ems        : false !default;
-$mq-em-base    : 16px !default;
+$mq-ems    : false !default;
+$mq-em-base: 16px !default;
 
 // Breakpoints
 // ==================================================
 $mq-breakpoints: (
-  iphone    : 320px,
-  iphone6   : 375px,
-  iphone6p  : 414px,
-  small     : 480px,
-  medium    : 640px,
-  ipad      : 768px,
-  large     : 1025px,
+  iphone  : 320px,
+  iphone6 : 375px,
+  iphone6p: 414px,
+  small   : 480px,
+  medium  : 640px,
+  ipad    : 768px,
+  large   : 1025px,
 ) !default;
 
 // Breakpoints
