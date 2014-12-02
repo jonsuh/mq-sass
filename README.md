@@ -97,6 +97,21 @@ $mq-only: "only screen";
   }
   ```
 
+  If you don't like the pre-defined breakpoints, you can customize your own breakpoints map.
+
+  ```scss
+  $mq-breakpoints: (
+    x : 600px,
+    m : 800px,
+    l : 1000px,
+    xl: 1200px,
+  );
+
+  @include mq(xl) {
+    color: blue;
+  }
+  ```
+
 2. `$breakpoint` also accepts other pre-defined values:
 
   - portrait
