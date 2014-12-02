@@ -17,14 +17,17 @@ mq-sass is a simple, lightweight media query library for Sass.
 
 2. Import mq-sass at the top of your Sass file.
 
-  ``@import "bower_components/mq-sass/styleshets/mq-sass";```
+  ```@import "bower_components/mq-sass/styleshets/mq-sass";```
 
   If you're using Grunt, Gulp, Compass, or alike, include/import mq-sass:
 
-  ```# Compass config.rb
+  ```rb
+  # Compass config.rb
   add_import_path "bower_components/mq-sass/stylesheets"
   ```
-  ```# grunt-sass Gruntfile.js
+
+  ```js
+  // grunt-sass Gruntfile.js
   options: {
     includePaths: ['bower_components/mq-sass/stylesheets']
   },
