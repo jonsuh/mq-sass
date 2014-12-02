@@ -248,12 +248,12 @@ $mq-em-base: 20px;
 }
 ```
 
-#### only
+#### media
 
-By default media queries are specified for `only screen`. For some reason if you'd like to change it or remove it completely, you can do so by changing the setting `$mq-only`:
+By default media of media queries are specified for `only screen`. For some reason if you'd like to change it or remove it completely, you can do so by changing the setting `$mq-media`:
 
 ```scss
-$mq-only: "screen";
+$mq-media: "screen";
 ```
   
 ```css
@@ -262,7 +262,7 @@ $mq-only: "screen";
 ```
   
 ```scss
-$mq-only: ""; // or false
+$mq-media: ""; // or false
 ```
   
 ```css
