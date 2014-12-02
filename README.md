@@ -158,13 +158,13 @@ $mq-only: "only screen";
   }
   ```
 
-  Note: You can also use unitless pixel values: `@include mq(700) {}`
+  **Note:** You can also use unitless pixel values: `@include mq(700) {}`
 
 #### `$minmax`
 
 `$minmax` accepts values `min` or `max`, which determines whether your media query will be `min-width:` or max-width:` respectively. If left blank, it falls back to the default value, `min`.
 
-Note: If using a pre-defined breakpoint from `$mq-breakpoints()` and `$minmax` value of `max`, the `max-width` value will be 1 pixel less.
+**Note:** If using a pre-defined breakpoint from `$mq-breakpoints()` and `$minmax` value of `max`, the `max-width` value will be 1 pixel less.
 
 Example:
 
