@@ -28,9 +28,9 @@
 
     $value: strip-units($value);
 
-    @if $minmax == max {
-      $value: $value - 1;
-    }
+    // @if $minmax == max {
+    //   $value: $value - 1;
+    // }
 
     @if ($mq-ems == true) {
       $value: em($value, $mq-em-base);

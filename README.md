@@ -71,7 +71,7 @@ $mq-breakpoints: (
   small   : 480px,
   medium  : 640px,
   ipad    : 768px,
-  large   : 1025px,
+  large   : 1024px,
 );
 
 $mq-ems    : false;
@@ -170,8 +170,6 @@ By default, media queries are mobile first (`min-width`).
 
 `$minmax` accepts values `min` or `max`, which will result in `min-width:` or `max-width:` respectively. If left blank, it falls back to the default, `min`.
 
-**Note:** When using `max`, if your breakpoint is one from `$mq-breakpoints()`, the `max-width` value will be 1 pixel less.
-
 Example:
 
 ```scss
@@ -198,7 +196,7 @@ Example:
   color: white;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   color: blue;
 }
 
