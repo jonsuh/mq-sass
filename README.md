@@ -1,6 +1,6 @@
 # mq-sass
 
-mq-sass is a lightweight Sass library to manage your media queries.
+mq-sass is a lightweight Sass library to help you manage your responsive breakpoints and easily generate media queries.
 
 ## Requirements
 
