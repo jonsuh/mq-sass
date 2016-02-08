@@ -1,7 +1,7 @@
 {
   "name": "mq-sass",
   "version": "0.3.0",
-  "description": "Lightweight Sass library to manage responsive breakpoints and generate to media queries",
+  "description": "Sass library to manage responsive breakpoints and generate to media queries",
   "license": "MIT",
   "author": {
     "name": "Jonathan Suh",
