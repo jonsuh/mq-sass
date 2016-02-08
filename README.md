@@ -1,6 +1,6 @@
 # mq-sass
 
-mq-sass is a lightweight Sass library to help you manage your responsive breakpoints and easily generate media queries.
+mq-sass is a Sass library to help you manage your responsive breakpoints and easily generate media queries.
 
 ## Requirements
 
@@ -9,29 +9,34 @@ mq-sass is a lightweight Sass library to help you manage your responsive breakpo
 
 ## Installation
 
-### Bower
+- You can install mq-sass via [npm](https://www.npmjs.com/package/mq-sass)<sup id="a1">[[1]](#f1)</sup><sup id="a2">[[2]](#f2)</sup> or manually.
+
+### npm
 
 1. Run:
 
-  ```bower install mq-sass -D```
+  ```
+  # npm
+  npm install mq-sass -D
+  ```
 
 2. Import mq-sass at the top of your Sass file.
 
   ```scss
-  @import "bower_components/mq-sass/styleshets/mq-sass";
+  @import "node_modules/mq-sass/styleshets/mq-sass";
   ```
 
   If you're using Grunt, Gulp, Compass, or alike, include/import mq-sass:
 
   ```rb
   # Compass config.rb
-  add_import_path "bower_components/mq-sass/stylesheets"
+  add_import_path "node_modules/mq-sass/stylesheets"
   ```
 
   ```js
   // grunt-sass Gruntfile.js
   options: {
-    includePaths: ['bower_components/mq-sass/stylesheets']
+    includePaths: ['node_modules/mq-sass/stylesheets']
   },
   ```
 
@@ -41,7 +46,7 @@ mq-sass is a lightweight Sass library to help you manage your responsive breakpo
   @import "mq-sass";
   ```
 
-### Other
+### Manually
 
 1. Download and unzip.
 2. Copy the contents of the stylesheets folder to a folder within your Sass structure (i.e. `sass/mq-sass/`)
@@ -81,6 +86,8 @@ $mq-only: "only screen";
 ```
 
 ### Usage
+
+Mixin `mq()` accepts 3 parameters: `mq($breakpoint, $minmax, $widthheight)`.
 
 #### `$breakpoint`
 
@@ -177,14 +184,6 @@ Example:
   color: white;
 }
 
-@include mq(ipad, max) {
-  color: blue;
-}
-
-@include mq(600px) {
-  color: magenta;
-}
-
 @include mq(600px, max) {
   color: cyan;
 }
@@ -196,16 +195,37 @@ Example:
   color: white;
 }
 
-@media only screen and (max-width: 768px) {
-  color: blue;
-}
-
-@media only screen and (min-width: 600px) {
-  color: magenta;
-}
-
 @media only screen and (max-width: 600px) {
   color: cyan;
+}
+```
+
+#### `$widthheight`
+
+By default, media queries that are generated are (`min/max-width`).
+
+`$widthheight` accepts values `width` or `height`, which results in `min/max-width:` or `min/max-height:` respectively. If left blank, it falls back to the default, `width`.
+
+Example:
+
+```scss
+@include mq(small, min, height) {
+  color: cyan;
+}
+
+@include mq(600px, max, height) {
+  color: pink;
+}
+```
+
+```css
+/* Resulting CSS */
+@media only screen and (min-height: 480px) {
+  color: cyan;
+}
+
+@media only screen and (max-height: 600px) {
+  color: pink;
 }
 ```
 
@@ -268,11 +288,17 @@ $mq-media: ""; // or false
 @media (min-width...) {}
 ```
 
+## Notes
+
+<b id="f1">1</b>. Requires [Node.js](https://nodejs.org/) [↩](#a1)
+
+<b id="f2">2</b>. Also available on [Bower](http://bower.io/search/?q=mq-sass) [↩](#a2)
+
 ## License
 
 The MIT License
 
-Copyright © 2014 [Jonathan Suh](https://jonsuh.com) ([@jonsuh](https://twitter.com/jonsuh))
+Copyright © 2014–2016 [Jonathan Suh](https://jonsuh.com) ([@jonsuh](https://twitter.com/jonsuh))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
