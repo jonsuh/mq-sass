@@ -16,7 +16,6 @@ mq-sass is a Sass library to help you manage your responsive breakpoints and eas
 1. Run:
 
   ```
-  # npm
   npm install mq-sass -D
   ```
 
