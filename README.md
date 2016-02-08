@@ -25,18 +25,23 @@ mq-sass is a Sass library to help you manage your responsive breakpoints and eas
   @import "node_modules/mq-sass/styleshets/mq-sass";
   ```
 
-  If you're using Grunt, Gulp, Compass, or alike, include/import mq-sass:
-
-  ```rb
-  # Compass config.rb
-  add_import_path "node_modules/mq-sass/stylesheets"
-  ```
+  If you're using gulp, Grunt, Compass, or alike, include/import mq-sass:
 
   ```js
+  // gulp-sass gulpfile.js
+  .pipe(sass({
+    includePaths: ['node_modules/mq-sass/stylesheets']
+  }))
+
   // grunt-sass Gruntfile.js
   options: {
     includePaths: ['node_modules/mq-sass/stylesheets']
   },
+  ```
+
+  ```rb
+  # Compass config.rb
+  add_import_path "node_modules/mq-sass/stylesheets"
   ```
 
   Then import mq-sass at the top of your Sass file.
