@@ -7,7 +7,7 @@
 // ==================================================
 // mq Mixin
 // ==================================================
-@mixin mq($breakpoint, $minmax: min) {
+@mixin mq($breakpoint, $minmax: min, $widthheight: width) {
   @if $breakpoint == landscape or $breakpoint == portrait or $breakpoint == retina or map-has-key($mq-breakpoints, $breakpoint) or type-of($breakpoint) == "number" {
     $media: $mq-media;
     $media-query: "";
@@ -33,6 +33,12 @@
         $minmax: min;
       }
 
+      @if $widthheight != width and $widthheight != height {
+        @warn "The third parameter of `mq()` only accepts values of `width` or `height`."
+            + "Falling back to the default, `width`.";
+        $widthheight: width;
+      }
+
       $value: $breakpoint;
 
       @if map-has-key($mq-breakpoints, $breakpoint) {
@@ -52,7 +58,7 @@
         $value: $value + px;
       }
 
-      $media-query: "#{$media} (#{$minmax}-width: #{$value})";
+      $media-query: "#{$media} (#{$minmax}-#{$widthheight}: #{$value})";
     }
 
     @media #{$media-query} {
