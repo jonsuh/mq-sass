@@ -65,7 +65,7 @@ mq-sass is a Sass library to help you manage your responsive breakpoints and eas
 ### Mixin
 
 ```scss
-@include mq($breakpoint, $minmax, $widthheight) { // `$minmax` and `$widthheight` are optional
+@include mq($breakpoint, $minmax, $widthheight) { // $minmax and $widthheight are optional
   // Sass goes here
 }
 ```
