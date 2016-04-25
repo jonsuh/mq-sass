@@ -5,6 +5,25 @@
 @import "mq-sass/functions.scss";
 
 // ==================================================
+// mq-get Function
+// ==================================================
+@function mq-get($breakpoint, $ems: false) {
+  @if map-has-key($mq-breakpoints, $breakpoint) {
+    $value: map-get($mq-breakpoints, $breakpoint);
+
+    @if $ems == true {
+      $value: em($value, $mq-em-base);
+    }
+
+    @return $value;
+  }
+  @else {
+    @error "Invalid breakpoint key. \a"
+         + "It must be defined in the `$mq-breakpoints` map.";
+  }
+}
+
+// ==================================================
 // mq Mixin
 // ==================================================
 @mixin mq($breakpoint, $minmax: min, $widthheight: width) {
