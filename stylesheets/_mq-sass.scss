@@ -28,14 +28,11 @@
 // ==================================================
 @mixin mq($breakpoint, $minmax: min, $widthheight: width) {
   @if $breakpoint == landscape or $breakpoint == portrait or $breakpoint == retina or map-has-key($mq-breakpoints, $breakpoint) or type-of($breakpoint) == "number" {
-    $media: $mq-media;
+    $media: $mq-media + " and ";
     $media-query: "";
 
     @if ($media == false) {
       $media: "";
-    }
-    @else {
-      $media: $media + " and ";
     }
 
     @if $breakpoint == landscape or $breakpoint == portrait {
@@ -47,13 +44,13 @@
     }
     @else {
       @if $minmax != min and $minmax != max {
-        @warn "The second parameter of `mq()` only accepts value of `min` or `max`. "
+        @warn "The second parameter of `mq()` only accepts value of `min` or `max`. \a"
             + "Falling back to the default, `min`.";
         $minmax: min;
       }
 
       @if $widthheight != width and $widthheight != height {
-        @warn "The third parameter of `mq()` only accepts values of `width` or `height`."
+        @warn "The third parameter of `mq()` only accepts values of `width` or `height`. \a"
             + "Falling back to the default, `width`.";
         $widthheight: width;
       }
@@ -66,15 +63,10 @@
 
       $value: strip-units($value);
 
-      // @if $minmax == max {
-      //   $value: $value - 1;
-      // }
+      $value: $value + px;
 
       @if ($mq-ems == true) {
         $value: em($value, $mq-em-base);
-      }
-      @else {
-        $value: $value + px;
       }
 
       $media-query: "#{$media} (#{$minmax}-#{$widthheight}: #{$value})";
@@ -85,8 +77,8 @@
     }
   }
   @else {
-    @warn "Invalid breakpoint value. It must be "
-        + "defined in the `$mq-breakpoints` map, a valid CSS value, "
+    @warn "Invalid breakpoint value. \a"
+        + "It must be defined in the `$mq-breakpoints` map, a valid CSS value, \a"
         + "or a predefined (e.g. retina, landscape, portrait).";
   }
 }
