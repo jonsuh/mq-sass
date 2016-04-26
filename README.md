@@ -62,14 +62,6 @@ mq-sass is a Sass library to help you manage your responsive breakpoints and eas
 
 ## Documentation
 
-### Mixin
-
-```scss
-@include mq($breakpoint, $minmax, $widthheight) { // $minmax and $widthheight are optional
-  // Sass goes here
-}
-```
-
 ### Settings
 
 ```scss
@@ -89,9 +81,13 @@ $mq-em-base: 16px;
 $mq-only: "only screen";
 ```
 
-### Usage
+### `mq($breakpoint, $minmax, $widthheight)` Mixin
 
-Mixin `mq()` accepts 3 parameters: `mq($breakpoint, $minmax, $widthheight)`.
+```scss
+@include mq($breakpoint, $minmax, $widthheight) { // $minmax and $widthheight are optional
+  // Sass goes here
+}
+```
 
 #### `$breakpoint`
 
@@ -192,7 +188,7 @@ Example:
   color: cyan;
 }
 ```
-  
+
 ```css
 /* Resulting CSS */
 @media only screen and (min-width: 768px) {
@@ -262,7 +258,7 @@ $mq-em-base: 20px;
   color: cyan;
 }
 ```
-  
+
 ```css
 /* Resulting CSS */
 @media only screen and (min-width: 30em) {
@@ -277,19 +273,80 @@ By default the media is specified for `only screen`. For some reason if you'd li
 ```scss
 $mq-media: "screen";
 ```
-  
+
 ```css
 /* Resulting CSS */
 @media screen and (min-width...) {}
 ```
-  
+
 ```scss
 $mq-media: ""; // or false
 ```
-  
+
 ```css
 /* Resulting CSS */
 @media (min-width...) {}
+```
+
+### `mq-get($breakpoint, $ems)` function
+
+Returns the value of the breakpoint in pixels (by default) or ems.
+
+```scss
+.example {
+  max-width: mq-get(small);
+}
+```
+
+#### `$breakpoint`
+
+`$breakpoint` accepts only pre-defined keys from the `$mq-breakpoints();` map.
+
+```scss
+$mq-breakpoints: (
+  small : 480px,
+  medium: 640px,
+);
+
+.example {
+  max-width: mq-get(small);
+}
+.example2 {
+  max-width: mq-get(medium);
+}
+```
+
+```css
+/* Resulting CSS */
+.example {
+  max-width: 480px;
+}
+.example2 {
+  max-width: 640px;
+}
+```
+
+#### `$ems`
+
+`$ems` is a boolean (`false` or `true`, `false` by default) and dictates whether or not the return is in pixels or ems.
+
+```scss
+.example {
+  max-width: mq-get(small);
+}
+.example-ems {
+  max-width: mq-get(small, true);
+}
+```
+
+```css
+/* Resulting CSS */
+.example {
+  max-width: 480px;
+}
+.example2 {
+  max-width: 30em;
+}
 ```
 
 ## Notes
