@@ -61,9 +61,7 @@
         $value: map-get($mq-breakpoints, $breakpoint);
       }
 
-      $value: strip-units($value);
-
-      $value: $value + px;
+      $value: strip-units($value * 1px);
 
       @if ($mq-ems == true) {
         $value: em($value, $mq-em-base);
