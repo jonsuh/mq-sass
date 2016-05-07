@@ -2,6 +2,10 @@
 
 Changelog for mq-sass.
 
+## [0.5.0] - 05/06/2016
+### Added
+- Fix for `Undefined operation: "#px times 0".` error.
+
 ## [0.4.0] - 04/25/2016
 ### Added
 - Add `mq-get` function.
