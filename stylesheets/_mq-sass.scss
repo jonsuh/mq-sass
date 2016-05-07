@@ -12,7 +12,7 @@
     $value: map-get($mq-breakpoints, $breakpoint);
 
     @if $ems == true {
-      $value: em($value, $mq-em-base);
+      $value: _mq-em($value, $mq-em-base);
     }
 
     @return $value;
@@ -61,10 +61,10 @@
         $value: map-get($mq-breakpoints, $breakpoint);
       }
 
-      $value: strip-units($value * 1px);
+      $value: _mq-strip-units($value * 1px);
 
       @if ($mq-ems == true) {
-        $value: em($value, $mq-em-base);
+        $value: _mq-em($value, $mq-em-base);
       }
 
       $media-query: "#{$media} (#{$minmax}-#{$widthheight}: #{$value})";
