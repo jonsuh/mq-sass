@@ -2,6 +2,10 @@
 
 Changelog for mq-sass.
 
+## [0.5.1] - 05/06/2016
+### Added
+- Functions with private names to avoid conflicts.
+
 ## [0.5.0] - 05/06/2016
 ### Added
 - Fix for `Undefined operation: "#px times 0".` error.
