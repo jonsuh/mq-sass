@@ -3,7 +3,7 @@
 Changelog for mq-sass.
 
 ## [0.6.0] - 05/19/2016
-### Added
+### Fixed
 - Fix bug where units are excluded when `$mq-ems: false`.
 
 ## [0.5.1] - 05/06/2016
