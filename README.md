@@ -22,7 +22,7 @@ mq-sass is a Sass library to help you manage your responsive breakpoints and eas
 2. Import mq-sass at the top of your Sass file.
 
   ```scss
-  @import "node_modules/mq-sass/styleshets/mq-sass";
+  @import "node_modules/mq-sass/stylesheets/mq-sass";
   ```
 
   If you're using gulp, Grunt, Compass, or alike, include/import mq-sass:
