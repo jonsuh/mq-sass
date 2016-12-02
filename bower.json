@@ -31,6 +31,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "Gemfile",
+    "mq-sass.gemspec",
+    "lib"
   ]
 }
