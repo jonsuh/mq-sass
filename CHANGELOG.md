@@ -2,6 +2,11 @@
 
 Changelog for mq-sass.
 
+## [0.7.0] - 12/02/2016
+### Added
+- [Ruby gem](https://rubygems.org/gems/mq-sass) support.
+- [Eyeglass](http://eyeglass.rocks/) support.
+
 ## [0.6.0] - 05/19/2016
 ### Fixed
 - Fix bug where units are excluded when `$mq-ems: false`.
