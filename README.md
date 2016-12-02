@@ -9,23 +9,27 @@ mq-sass is a Sass library to help you manage your responsive breakpoints and eas
 
 ## Installation
 
-- You can install mq-sass via [npm](https://www.npmjs.com/package/mq-sass)<sup id="a1">[[1]](#f1)</sup><sup id="a2">[[2]](#f2)</sup> or manually.
-
-### npm
-
-1. Run:
+1. mq-sass is available on [npm](https://www.npmjs.com/package/mq-sass), yarn and [Bower](http://bower.io/search/?q=mq-sass).
 
   ```
-  npm install mq-sass -D
+  npm install mq-sass
+
+  yarn get mq-sass
+
+  bower install css-mq-sass
   ```
 
-2. Import mq-sass at the top of your Sass file.
+  Also available as a [Ruby gem](https://rubygems.org/gems/mq-sass) to use within your Rails application—see [below](#install-for-ruby-on-rails) for more information.
+
+  Or to manually install it, [download](https://github.com/jonsuh/mq-sass/archive/master.zip) and unzip the source files, then copy the files from the `stylesheets/mq-sass` directory into your project.
+
+2. Import the `_mq-sass.scss` file into your project.
 
   ```scss
-  @import "node_modules/mq-sass/styleshets/mq-sass";
+  @import "mq-sass";
   ```
 
-  If you're using gulp, Grunt, Compass, or alike, include/import mq-sass:
+  If you're using gulp, Grunt, Compass, or alike, include mq-sass:
 
   ```js
   // gulp-sass gulpfile.js
@@ -44,21 +48,23 @@ mq-sass is a Sass library to help you manage your responsive breakpoints and eas
   add_import_path "node_modules/mq-sass/stylesheets"
   ```
 
-  Then import mq-sass at the top of your Sass file.
+### Install for Ruby on Rails
+
+1. Add mq-sass to your Gemfile.
+
+  ```
+  gem 'mq-sass'
+  ```
+
+2. Run `bundle install`.
+3. Include mq-sass by using Sass’s native `@import`*
 
   ```scss
+  // application.scss
   @import "mq-sass";
   ```
 
-### Manually
-
-1. Download and unzip.
-2. Copy the contents of the stylesheets folder to a folder within your Sass structure (i.e. `sass/mq-sass/`)
-3. Import mq-sass at the top of your Sass file.
-
-  ```scss
-  @import "sass/mq-sass/mq-sass";
-  ```
+  \* [More information](https://blog.pivotal.io/pivotal-labs/labs/structure-your-sass-files-with-import) on why Sass’s native `@import` + why you should ditch Sprockets directives altogether.
 
 ## Documentation
 
