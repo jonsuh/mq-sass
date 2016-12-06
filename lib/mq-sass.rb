@@ -14,6 +14,6 @@ module MQSass
     end
   end
 
-  mqsass_path = File.expand_path("../../_sass/mq-sass", __FILE__)
+  mqsass_path = File.expand_path("../../stylesheets", __FILE__)
   ENV["SASS_PATH"] = [ENV["SASS_PATH"], mqsass_path].compact.join(File::PATH_SEPARATOR)
 end
