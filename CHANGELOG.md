@@ -2,6 +2,10 @@
 
 Changelog for mq-sass.
 
+## [0.8.0] - 12/06/2016
+### Fixed
+- Incorrect Ruby gem path which prevented it from being imported properly.
+
 ## [0.7.0] - 12/02/2016
 ### Added
 - [Ruby gem](https://rubygems.org/gems/mq-sass) support.
