@@ -1,6 +1,6 @@
 {
   "name": "mq-sass",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Sass library to manage responsive breakpoints and generate to media queries",
   "homepage": "https://github.com/jonsuh/mq-sass",
   "license": "MIT",
